@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="favicon.ico" alt="App Icon" class="logo">
+            <h1>Stock Dashboard</h1>
+        </header>
+        <section class="form-section">
+            <form id="stockForm" class="stock-form">
+                <div class="input-row">
+                    <div>
+                        <label for="ticker">Enter Ticker Symbol:</label>
+                        <input type="text" id="ticker" name="ticker" required />
+                    </div>
+                    <div>
+                        <label for="startDate">Start Date:</label>
+                        <input type="date" id="startDate" name="startDate" required />
+                    </div>
+                    <div>
+                        <label for="endDate">End Date:</label>
+                        <input type="date" id="endDate" name="endDate" required />
+                    </div>
+                </div>
+                <div class="submit-button">
+                    <button type="submit">Get Stock Data</button>
+                </div>
+            </form>
+        </section>
+        <section id="stockGraphContainer">
+            <canvas id="stockGraph"></canvas>
+        </section>
+        <section class="email-form">
+            <h2>Send Stock Report</h2>
+            <form id="emailForm">
+                <input type="email" id="email" placeholder="Enter email to send report" required>
+                <button type="submit">Send Email</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
