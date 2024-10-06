@@ -6,7 +6,7 @@ document.getElementById("stockForm").addEventListener("submit", function (e) {
     const startDate = document.getElementById("startDate").value;
     const endDate = document.getElementById("endDate").value;
 
-    fetch(`http://localhost:5000/get_stock_data?ticker=${ticker}&startDate=${startDate}&endDate=${endDate}`)
+    fetch(`https://stock-dashboard-1-91fa.onrender.com/get_stock_data?ticker=${ticker}&startDate=${startDate}&endDate=${endDate}`)
         .then(response => response.json())
         .then(data => {
             addStockDataToGraph(data); // Call the function to add data to the chart
@@ -75,7 +75,7 @@ document.getElementById("emailForm").addEventListener("submit", function (e) {
     const chartCanvas = document.getElementById('stockGraph');
     const chartImage = chartCanvas.toDataURL('image/png');
     
-    fetch('http://localhost:5000/send_email', {
+    fetch('https://stock-dashboard-1-91fa.onrender.com/send_email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
